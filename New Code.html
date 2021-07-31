@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+         <head> 
+		           <style>
+				   body{
+				   padding:10px 10px;
+				
+				   }
+				   </style>
+                   <meta charset="utf-8">
+                   <title>**New Code**</title>
+                   <script type="text/javascript">
+				  
+                    
+					 
+					 
+					 function bbReservationCosts() {
+	                     
+						 //Declare Variables
+						 var num1, num2;              // These are the variables that store the numeric values obtained from the user
+						 var member;                     // This variable store input from customer
+					     var value;                         // This variable hold the stored value in member in the form of UpperCase
+						 
+						 //Declare Constants
+						 var childCharges = 15.00;
+						 var adultCharges = 25.00; 
+						 var discount = 25.00;
+						 
+						 // Gathering the customer data
+						 member=prompt("Are you a Travel Club Member or not ? (Y/N)");                      
+					     value=member.toUpperCase ();                                                                          // Conversion take place from LowerCase to UpperCase              
+						 num1=prompt("Please enter the number of adults","How many are older people ?");
+					     num1=parseInt(num1);                                                                                        // Conversion take place from textual input to numeric value
+					     num2=prompt("Please enter the number of children","How many kids do you have with you ?");
+					     num2=parseInt(num2);                                                                                        // Conversion take place from textual input to numeric value
+					
+						 document.write("Are you a member of travel club: " +"<strong>"+ value +"</strong>"+"<br/>" +
+						                        "Number of adults are: " + num1 +"<br/>"+ "Number of children are: " + num2 + "<br/>");   // Dispaly the result of user input
+						 
+						 //Processing the user values with IF - Else statements and Return Value
+						 if ( (value=="Y" && num1>=2) && (num2>=2) ) {
+						 
+						 document.write("Total discount applied: $25.00 " + "<br/>");
+						 return  num1 * adultCharges + num2 * childCharges- discount ;
+						 }
+						 else if (value=="Y" && num1>=5)  {
+						
+						 document.write("Total discount applied: $25.00 " + "<br/>");
+						 return  num1 * adultCharges + num2 * childCharges - discount ;
+						 } 
+						 else if (value=="N") {
+						
+						document.write("Total discount applied: $00.00 " + "<br/>");
+						 return  num1 * adultCharges + num2 * childCharges ;
+						 } 
+						 else {
+						 // Displays error message automatically on the screen If user enter invalid input
+						 document.write("<strong>" + "Error: " + "(" + member + ")" + " is an invalid value " + " [ Please enter the valid one ] " +"</strong>"  + "<br/>");
+						 }
+						 }
+						 
+				     function displayRidges () {
+						 var i = 1;    // Loop variable
+						
+						 // Display written value with the help of For Loop, until it reached its limit
+						 for(i; i<=38; i++){
+						 document.write("^");
+						 }
+						 document.write("<br/>");  // Add additional white space when whole For Loop is finished
+						 }
+					 
+				   </script>
+         </head>
+		 
+         <body>
+		           <script type="text/javascript">
+					
+					 var more;                // This variable store Customer Name
+                     var repeat;              // This variable store input from customer for repeating the whole program 
+					 var value;                // This variable hold the stored value in repeat in the form of UpperCase
+					 
+					 // Display the welcoming message on the top of the screen 
+	                 document.write(" Welcome to Bed and Breakfast Reservation System " +"<br/>");  
+					 
+					 // Calling 1st  function
+					 displayRidges ();
+					
+					 // Execution of Do - While Loop 
+					 do {
+					 document.write("<br/>");   // Add additional white space 
+					
+					// Gather the user input
+					 more = prompt("Please enter your name for table reservation","Customer Name");        // Ask Customer Name
+					 document.write("<br/>" + "Thank you " +"<strong>"+ more.toUpperCase () + "</strong>" +" for your reservation." +"<br/>" + "<br/>" );  // Display the thank you message on the top
+					 
+					 // Calling 2nd function
+					 var cost = bbReservationCosts();
+					 document.write("Total stay: $" + cost +".00"+ "<br/>" );    // Dispaly the final cost or result
+				     
+					 // Printing the written value with the help of For Loop, until it reached its limit
+					 for (var i=1; i<=73; i++){
+						 document.write("_" );
+						 }
+				    
+					 repeat = prompt("Would you like to repeat this program? (Y/N)");
+					 value=repeat.toUpperCase ();            // Conversion take place from LowerCase to UpperCase
+					 } while (value == "Y");
+					
+					 // Thank the user and ended up the program  
+					 document.write( "<br/>" + "<br/>" );   // Add additional white space 
+					 document.write( "Thank you for using the Bed and Breakfast Reservation System !" );
+				  
+				  </script>
+         </body>
+		 
+</html>
